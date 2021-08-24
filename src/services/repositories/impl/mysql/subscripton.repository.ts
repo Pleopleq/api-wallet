@@ -1,7 +1,7 @@
 import connector from '../../../../common/persistence/mysql.persistence'
 import { Subscription } from '../../domain/subscription'
 
-export class SubscriptionRepository {
+export class SubscriptionMySQLRepository {
     public async getAll(): Promise<Subscription[]> {
         const [rows] = await connector.execute(
             'SELECT * FROM wallet_subscription ORDER BY id DESC'
